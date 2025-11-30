@@ -1,9 +1,9 @@
 export default function TodoList({ items, onDeleteTask, onEditTask }) {
   return (
     <ul className="mt-5 space-y-3">
-      {items.map((item, index) => (
+      {items.map((item) => (
         <li
-          key={index}
+          key={item.id}
           className="flex justify-between items-center p-4 bg-white rounded-2xl shadow-md hover:-translate-y-1
  hover:shadow-lg transition-all duration-300 border border-gray-200"
         >
@@ -28,14 +28,14 @@ export default function TodoList({ items, onDeleteTask, onEditTask }) {
           <div className="flex gap-2">
             <button
               className="px-4 py-1 rounded-lg bg-yellow-500 text-white text-sm shadow hover:bg-yellow-600 active:scale-95 transition"
-              onClick={() => onEditTask(index)}
+              onClick={() => onEditTask(item.id)}
             >
               Edit
             </button>
 
             <button
               className="px-4 py-1 rounded-lg bg-red-500 text-white text-sm shadow hover:bg-red-600 active:scale-95 transition"
-              onClick={() => onDeleteTask(index)}
+              onClick={() => onDeleteTask(item.id)}
             >
               Delete
             </button>
